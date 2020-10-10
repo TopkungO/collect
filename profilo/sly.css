@@ -1,0 +1,142 @@
+*{
+    margin:8;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto, sans-serif;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+
+
+}
+nav{
+    height: 70px;
+    background: #333333; 
+    color: #ffffff;
+}
+.nav-wrapper{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.nav-wrapper a:hover {
+    color: red;
+}
+.nav-wrapper li ul{
+    list-style: none;
+    position: absolute;
+    display: none;
+    width: inherit;
+    background: #333;
+}
+.menu{
+    display: flex;
+    list-style: none;
+}
+.logo h3{
+    display: inline;
+}
+.contect-body{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 0px;
+    background:#e4e4e4 ;
+    height: 500px;
+    display: block;
+}
+.contect-body img{
+    margin: 20px;
+    width: 45%;
+    height: 450px;
+    float: left;
+}
+.detail{
+    text-align: left;
+    padding-top: 50px;
+    padding-left: 60%;
+    width: 90%;
+
+}
+.detail ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.detail ul li {
+    margin-bottom: 20px;
+}
+.carousel-inner img {
+    width: 80%;
+    height: 40%;
+    margin: auto;
+    border: solid #000 1px;
+}
+.card{
+    width: 100%;
+    color: #000;
+    background-color:#fff;
+    margin: 0 auto;    
+
+}
+#demo{
+    background-color: #ffffff;
+    width:  80%;
+    height: 20%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 1rem;
+    
+}
+.m-btn {
+    display: inline-block;
+    border: 2px solid transparent;
+    color: inherit;
+    line-height: inherit;
+    border-radius: 5px;
+    width: auto;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    background:#2ce3f8;
+    color: #fff;
+    margin-left: 2rem;
+}
+a:hover.m-btn{
+    color: #f0d61e;
+    text-decoration: none;
+}
+.about{
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background:#feebab;
+    background-position: center center;
+    background-repeat:no-repeat ;
+    background-size: cover; /*ขยายให้สุด*/
+}
+.test{
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    background:#2ce3f8;
+    background-position: center center;
+    background-repeat:no-repeat ;
+    background-size: cover; /*ขยายให้สุด*/
+}
+
+footer{
+    background: #000;
+    text-align: center;
+    color: #fff;
+    padding: 8;
+    height: 3rem;
+}
+.menu li{ margin: 0 1rem}
+.menu li a{color: #fff;text-decoration: none;}

@@ -1,0 +1,13 @@
+1.1 ติดตั้ง web server 
+1.2 นำไฟล์ FromNode ไปวางวางที่ web server
+1.3 นำไฟล์foodpet.sql ไป Export ตั้งชื่อฐานข้อมูลว่า foodpet
+1.4 เปิดหน้าเว็บ http://localhost/FromNode/login.php
+1.5 id:admin pass:123456
+
+2.1 นำโค้ด จากไฟล์controlbyhtml compiler ใน arduino IDE
+
+-------------------------------------
+นาย เกริกพล ศิริวัฒนไพฑูรย์ 
+5811425020
+
+Tel.0844470021

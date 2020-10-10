@@ -1,0 +1,13 @@
+.about{
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /*ทำให้อยู่ตรงกลางแนวนอน*/
+    align-items: center; /*ทำให้อยู่ตรงกลางในแนวตั้ง*/
+    flex-direction: column; /*จัดวางอยู่ในรูปแบบ column*/
+    background: #f0d61e;
+    background-position: center center;
+    background-repeat:no-repeat ;
+    background-size: cover; /*ขยายให้สุด*/
+}
