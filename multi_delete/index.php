@@ -1,26 +1,41 @@
 <?php
-    error_reporting(0);
-    $con = mysqli_connect('localhost', 'root', '', 'crud_oop');
-    if ($con) {
-        // echo "connect success";
-    } else {
-        echo "Failed to connect" . mysqli_connect_error();
-    }
-
-    if (isset($_POST['delete'])) {
-        
-        if (count ($_POST['ids']) > 0) {
-            $all = implode(",", $_POST['ids']);
-            $sql = mysqli_query($con, "DELETE FROM mulit_delete WHERE id in ($all)");
-            if ($sql) {
-                echo "<script>alert('Data deleted successful');</script>";
-            } else {
-                echo "<script>alert('Something went wrong');</script>";
-            }
-        } else {
-            $errmsg = "You need to select atleast one checkbox to delete";
-        }
+error_reporting(0);
+$con = mysqli_connect('localhost', 'root', '', 'crud_oop');
+if ($con) {
+    // echo "connect success";
+} else {
+    echo "Failed to connect" . mysqli_connect_error();
 }
+
+if (isset($_POST['delete'])) {
+
+    if (count($_POST['ids']) > 0) {
+        $all = implode(",", $_POST['ids']);
+        $sql = mysqli_query($con, "DELETE FROM mulit_delete WHERE id in ($all)");
+        if ($sql) {
+            echo "<script>alert('Data deleted successful');</script>";
+        } else {
+            echo "<script>alert('Something went wrong');</script>";
+        }
+    } else {
+        $errmsg = "You need to select atleast one checkbox to delete";
+    }
+}
+
+    if(isset($_POST['add'])){
+        $fullname = $_POST['fullname'];
+        $education = $_POST['education'];
+        $date = $_POST['date'];
+
+        $sql = mysqli_query($con, "INSERT INTO mulit_delete(fullname, education, postingDate)
+         VALUES('$fullname', '$education', '$date')");
+        if($sql){
+            echo "<script>alert('Data insert successful');</script>";
+        }else{
+            echo "<script>alert('Something went wrong');</script>";
+        }
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +51,32 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add infomation</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST">
+                    <div class="modal-body">
+                        <label for="name" class="form-label mt-3">fullname</label>
+                        <input type="text" name="fullname" class="form-control" placeholder="Add fullname">
+                        <label for="education" class="form-label mt-3">education</label>
+                        <input type="text" name="education" class="form-control" placeholder="Add education">
+                        <label for="date" class="form-label mt-3">Date</label>
+                        <input type="date" name="date" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="add" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <form action="" method="post">
             <?php if (isset($errmsg)) { ?>
@@ -46,6 +87,7 @@
             <table class="table table-striped">
                 <tr>
                     <td colspan="4">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add</button>
                         <input type="submit" name="delete" value="Delete" class="btn btn-danger" onClick="return confirm('are you sure you want to delete?');">
                     </td>
                 </tr>
